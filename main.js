@@ -1,15 +1,8 @@
+
 document.addEventListerner('DOMContentLoaded', () => {
     const squares = document.querySelectorAll(',grid div')
     const resultDisplay = document.querySelector('#result')
     let width = 20
-
-
-
-
-
-
-
-
 
     //CHARACTER
     squares[currentShooterIndex].classList.add('shooter')
@@ -28,3 +21,4 @@ document.addEventListerner('DOMContentLoaded', () => {
     }
     document.addEventListener('keydown', moveShooter)
     }
+
