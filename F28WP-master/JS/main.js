@@ -1,5 +1,5 @@
 
 function changeBGImage(){
-     document.body.background = "monke.jpg";
-
+     document.body.background = "../Assets/monke.jpg";
+}
 
