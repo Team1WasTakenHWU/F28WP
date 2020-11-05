@@ -1,6 +1,7 @@
 
 var x ;
 function changeBGImage(){
+  
      document.body.background = "../Assets/pixil-frame-0_3.png","../Assets/pixil-frame-0_4.png";
     var x = document.getElementById("play-menu")
     if (x.style.display === "none") {
