@@ -7,10 +7,25 @@ TODO: GET CHARACTER ON SCREEN
 -IMPLEMENT ENEMY AI
 */
 
-//array to hold images 
+/* I tried and failed.-George
+var Player = function (x, y, size, speed) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.speed = speed;
+    this.update = function () {
+        ellipse(this.x, this.y, this.size, this.speed);
+        loadImage("guy");
+    }
+};
 
+var player = new Player(0, 0, 10, 10);
 
+draw = function () {
+    player.update();
 
+};
+*/
 
 window.onload = function () {
     ctx = document.getElementById('game').getContext("2d");
@@ -44,30 +59,22 @@ function changeBGImage() {
     l.style.right = "0px";
 }
 
-function movement(width, height, color, x, y) {
-    this.width = width;
-    this.height = height;
-    this.angle = 0;
-    this.moveAngle = 0;
-    this.speed = 0;
-    this.x = x;
-    this.y = y;
 
-    this.update = function () {
-        ctx = gameMap.context;
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.fillstyle = color;
-        ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
-        ctx.restore();
-    }
-    this.newPos = function () {
-        this.angle += this.moveAngle * Math.PI / 180;
-        this.x += this.speed * Math.sin(this.angle);
-        this.y -= this.speed * Math.cos(this.angle);
-    }
+this.update = function () {
+    ctx = gameMap.context;
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.angle);
+    ctx.fillstyle = color;
+    ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
+    ctx.restore();
 }
+this.newPos = function () {
+    this.angle += this.moveAngle * Math.PI / 180;
+    this.x += this.speed * Math.sin(this.angle);
+    this.y -= this.speed * Math.cos(this.angle);
+}
+
 
 
 var ctx = null;
@@ -85,7 +92,7 @@ function startGame() {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ];
 
-    ctx.dra
+
     var tileW = 40, tileH = 40;
     var mapW = 10, mapH = 10;
     var currentSecond = 0, frameCount = 0, framesLastSecond = 0;
@@ -99,6 +106,8 @@ function startGame() {
             drawGame.keys[e.keyCode] = (e.type == "keydown");
         });
     });
+
+
 
     function drawGame() {
 
