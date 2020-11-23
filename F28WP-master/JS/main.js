@@ -1,11 +1,34 @@
+/*
+f28WP Team1WasTaken Main.JS
+TODO: GET CHARACTER ON SCREEN
+-IMPLEMENT MOVEMENT
+-IMPLEMENT SHOOTING
+-IMPLEMENT ENEMIES?
+-IMPLEMENT ENEMY AI
+*/
+
+//array to hold images 
+
+
+
+
 window.onload = function () {
     ctx = document.getElementById('game').getContext("2d");
     requestAnimationFrame(drawGame);
     ctx.font = "bold 10pt sans-serif";
+    //array to hold images 
+    var sprites = {}
+    loadImage("guy");
+
 };
 
-
-
+//feed this function the name of the image to load, without .png
+function loadImage(image) {
+    //adds image to sprites array
+    sprites[image] = new Image();
+    //links the name you provide to the directory of the image that matches //if the directory moves this must change
+    sprites[image].src = "Assets" + image + ".png";
+}
 
 function changeBGImage() {
     document.body.background = "../Assets/pixil-frame-0_3.png";
@@ -61,6 +84,8 @@ function startGame() {
         0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     ];
+
+    ctx.dra
     var tileW = 40, tileH = 40;
     var mapW = 10, mapH = 10;
     var currentSecond = 0, frameCount = 0, framesLastSecond = 0;
@@ -107,6 +132,8 @@ function startGame() {
         requestAnimationFrame(drawGame);
 
     }
+
+
 }
 
 
