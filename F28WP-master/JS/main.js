@@ -1,33 +1,24 @@
 
-var x ;
-function changeBGImage(){
-  
-     document.body.background = "../Assets/pixil-frame-0_3.png","../Assets/pixil-frame-0_4.png";
-    var x = document.getElementById("play-menu")
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    }
-    else{
-        x.style.display = "none";
-    }
-    }
+document.addEventListerner('DOMContentLoaded', () => {
+    const squares = document.querySelectorAll(',grid div')
+    const resultDisplay = document.querySelector('#result')
+    let width = 20
 
-function showPlayer(){
-    var y = document.getElementById("game-canvas")
-    var playerImage = new Image(150, 150);
-    playerImage.src = "../Assets/guy.png";
-    if (x.style.display === "block") {
-    playerImage.display.display = "block";
-}
-    else {
-    playerImage.style.display ="none";
-}
-}
+    //CHARACTER
+    squares[currentShooterIndex].classList.add('shooter')
 
-function setTop() {
-    window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
-}
-
+    function moveShooter(e) {
+        squares[currentShooterIndex].classList.add('shooter')
+        switch (e.keyCode) {
+            case 37:
+                if (currentShooterIndex % width !== 0) currentShooterIndex -= 1
+                break
+            case 39:
+                if (currentShooterIndex % width < width - 1) currentShooterIndex += 1
+                break
+        }
+        squares[currentShooterIndex].classList.add('shooter')
+    }
+    document.addEventListener('keydown', moveShooter)
+    }
 
