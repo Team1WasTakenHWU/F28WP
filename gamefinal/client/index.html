@@ -1,44 +1,23 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
 
   <title>Zombie.io</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/gameStyle.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:title" content="Zombie.io">
-
+  <link rel="stylesheet" type = "text/css" href = "..\CSS\gameStyle.css" />
+  
 
   <script type="text/javascript" src="../JS/main.js">
+      
+          
   </script>
-  
-  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-<script>
-	var socket = io();
- 
-	var random = Math.random();
- 
-	var happy = function(){
-		socket.emit('happy',{
-			reason:'its my birthday' + random
-		});
-	}
- 
-	socket.on('serverMsg',function(data){
-		console.log(data.msg);	
-	});
- 
- 
-</script>
- 
-<button onclick="happy()">Happy</button>
 
 </head>
 
 <body onload="setTop">
+<div id='top'>
 
   <div id="play-menu">
+
     <h1>Zombie.io</h1>
     <p>
       Stay alive to get points and top the leaderboard.
@@ -48,20 +27,23 @@
       <br />
       Mouse to aim and left click to fire.
     </p>
+
     <hr />
+
     <p>
       Created by Team1WasTaken.
     </p>
+
     <hr />
     <input type="text" id="username-input" placeholder="Username" />
     <input type="button" value="Result" onclick="changeBGImage()">
+    <hr/>
   </div>
-  <hr />
 
   <div id="leaderboard">
 
-
     <table>
+
       <tr>
         <th>Username</th>
         <th>Score</th>
@@ -69,7 +51,8 @@
 
     </table>
   </div>
-  <canvas id="game-canvas" onclick="showPlayer()">
 
-  </canvas>
+</div>
+    
 </body>
+</html>
